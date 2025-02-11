@@ -11,11 +11,11 @@ use syntax::codemap::Span;
 use std;
 use std::collections::{HashMap, HashSet};
 
-const YAOIOUM_ATTR_CHECK_UNIFY: &'static str = "rustc_yaiouom_check_unify";
-const YAOIOUM_ATTR_COMBINATOR_MUL: &'static str = "rustc_yaiouom_combinator_mul";
-const YAOIOUM_ATTR_COMBINATOR_INV: &'static str = "rustc_yaiouom_combinator_inv";
+const YAOIOUM_ATTR_CHECK_UNIFY: &'static str = "yaiouom_check_unify";
+const YAOIOUM_ATTR_COMBINATOR_MUL: &'static str = "yaiouom_combinator_mul";
+const YAOIOUM_ATTR_COMBINATOR_INV: &'static str = "yaiouom_combinator_inv";
 const YAOIOUM_ATTR_COMBINATOR_DIMENSIONLESS: &'static str =
-    "rustc_yaiouom_combinator_dimensionless";
+    "yaiouom_combinator_dimensionless";
 
 /// If this def-id is a "primary tables entry", returns `Some((body_id, decl))`
 /// with information about it's body-id and fn-decl (if any). Otherwise,

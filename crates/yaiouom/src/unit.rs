@@ -67,7 +67,7 @@ impl<T: BaseUnit> Unit for T {
 
 /// A value with a unit.
 #[allow(unused_attributes)]
-#[rustc_yaiouom_check_unify_measure]
+#[yaiouom_check_unify_measure]
 pub struct Measure<T, U: Unit> {
     value: T,
     unit: PhantomData<U>,
@@ -158,7 +158,7 @@ impl<T, U: Unit> Measure<T, U> {
     /// As a fallback, **in debug builds**, each call to `unify` will panic
     /// if type `V` is not equivalent ot type `U`.
     #[allow(unused_attributes)]
-    #[rustc_yaiouom_check_unify]
+    #[yaiouom_check_unify]
     pub fn unify<V: Unit>(self) -> Measure<T, V> {
         // First, ensure that we can perform conversion.
         debug_assert_eq!(U::as_runtime(), V::as_runtime());
@@ -563,7 +563,7 @@ impl RuntimeUnit {
 
 /// A unit without dimension.
 #[allow(unused_attributes)]
-#[rustc_yaiouom_combinator_dimensionless]
+#[yaiouom_combinator_dimensionless]
 pub struct Dimensionless;
 impl Unit for Dimensionless {
     fn add_to_runtime(_: &mut RuntimeUnit, _: bool) {
@@ -593,7 +593,7 @@ impl<T> Measure<T, Dimensionless> {
 /// See the documentation of [unify](struct.Measure.html#method.unify) for details
 /// on how to work around this limitation.
 #[allow(unused_attributes)]
-#[rustc_yaiouom_combinator_mul]
+#[yaiouom_combinator_mul]
 pub struct Mul<A, B>
 where
     A: Unit,
@@ -618,7 +618,7 @@ impl<A: Unit, B: Unit> Unit for Mul<A, B> {
 /// See the documentation of [unify](struct.Measure.html#method.unify) for details
 /// on how to work around this limitation.
 #[allow(unused_attributes)]
-#[rustc_yaiouom_combinator_inv]
+#[yaiouom_combinator_inv]
 pub struct Inv<A>
 where
     A: Unit,
